@@ -1,0 +1,24 @@
+<div class="changelog-container">
+    <h1>📋 Cybersalt Template Cache Clear - Changelog</h1>
+
+    <h2>
+        <span class="version-badge">v1.0.0</span>
+        <span class="date">Unreleased</span>
+    </h2>
+
+    <h3><span class="section-icon">🚀</span>New</h3>
+    <ul>
+        <li><strong>Clear cache on save</strong>: empties Joomla's page cache when a site template style is saved (Save and Save &amp; Close), so visitors see the change on their next page load.</li>
+        <li><strong>Default style changes</strong>: also empties it when a style is made the default, or a language default is removed, in Site Template Styles.</li>
+        <li><strong>Per-style switch</strong>: a <strong>Cache</strong> tab with a <strong>Clear cache on save</strong> switch (on by default) on every site template style. A template can declare its own <code>clearcacheonsave</code> field instead.</li>
+        <li><strong>Message after clearing</strong> (can be turned off), shown when the System - Page Cache plugin is on.</li>
+        <li>Covers saves made through the Web Services API and the front-end Template Settings screen.</li>
+    </ul>
+
+    <h3><span class="section-icon">📦</span>Build</h3>
+    <ul>
+        <li><code>build.ps1</code> builds the package with 7-Zip and writes the integrity file list.</li>
+        <li>Shipped-file integrity check on the settings page.</li>
+        <li>Switches itself on at first install, with a post-install card linking to Site Template Styles and the plugin settings.</li>
+    </ul>
+</div>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>plg_system_cstemplatecacheclear</name>
+    <author>Cybersalt</author>
+    <creationDate>2026-11-25</creationDate>
+    <copyright>Copyright (C) 2026 Cybersalt. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>support@cybersalt.com</authorEmail>
+    <authorUrl>https://www.cybersalt.com</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_CSTEMPLATECACHECLEAR_XML_DESCRIPTION</description>
+    <namespace path="src">Cybersalt\Plugin\System\CsTemplateCacheClear</namespace>
+
+    <files>
+        <folder plugin="cstemplatecacheclear">services</folder>
+        <folder>forms</folder>
+        <folder>src</folder>
+        <filename>integrity.json</filename>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/plg_system_cstemplatecacheclear.ini</language>
+        <language tag="en-GB">en-GB/plg_system_cstemplatecacheclear.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldprefix="Cybersalt\Plugin\System\CsTemplateCacheClear\Field">
+                <field
+                    name="howitworks"
+                    type="note"
+                    label="PLG_SYSTEM_CSTEMPLATECACHECLEAR_HOWITWORKS_LABEL"
+                    description="PLG_SYSTEM_CSTEMPLATECACHECLEAR_HOWITWORKS_DESC"
+                    class="alert alert-info"
+                />
+                <field
+                    name="show_message"
+                    type="radio"
+                    label="PLG_SYSTEM_CSTEMPLATECACHECLEAR_SHOW_MESSAGE_LABEL"
+                    description="PLG_SYSTEM_CSTEMPLATECACHECLEAR_SHOW_MESSAGE_DESC"
+                    layout="joomla.form.field.radio.switcher"
+                    default="1"
+                    filter="integer"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field
+                    name="integrity"
+                    type="Integrity"
+                    label="PLG_SYSTEM_CSTEMPLATECACHECLEAR_INTEGRITY_LABEL"
+                    lists="plugins/system/cstemplatecacheclear/integrity.json"
+                    product="PLG_SYSTEM_CSTEMPLATECACHECLEAR"
+                />
+            </fieldset>
+        </fields>
+    </config>
+
+    <scriptfile>script.php</scriptfile>
+</extension>
